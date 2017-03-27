@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c82015" />
+
+    <com.yude.auctionhelp.views.view.CustomeGridView
+        android:layout_marginRight="10dp"
+
+        android:numColumns="4"
+        android:id="@+id/photo_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/photo_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <ImageView
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/addPhoto_iv"
+        android:src="@drawable/test_jiaohao"
+        android:layout_width="120dp"
+        android:layout_height="120dp" />
+    <TextView
+        android:id="@+id/hint_tv"
+        android:layout_width="120dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="(请上传至少2张)" />
+
+    <EditText
+        android:id="@+id/text_new_et"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_bg"
+
+        android:gravity="end|left"
+        android:hint="在此输入房屋文字信息"
+        android:textColorHint="#b0b0b0" />
+
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_button_selector"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="按住录音"
+         />
+
+
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#b0b0b0" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/catalog_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp" />
+
+
+</LinearLayout>

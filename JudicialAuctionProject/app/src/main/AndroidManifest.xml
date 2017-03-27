@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="com.yude.auctionhelp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />// 震动
+    // 语音 所需权限
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name="com.yude.auctionhelp.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:replace="Android:icon, android:theme">
+        <activity android:name="com.yude.auctionhelp.activitys.WelcomeActivity">
+
+        </activity>
+        <activity android:name=".ThemeActivity">
+
+        </activity>
+        <activity android:name="com.yude.auctionhelp.MainActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.LoginActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.my_activity.ConcernActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.my_activity.SettingActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.my_activity.ChangePasswordActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.FallbackActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.ReleaseCompleteActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.UnpublishedActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.ImageActivity" />
+        <activity
+            android:name="com.yude.auctionhelp.activitys.ForgetPwdActivity"
+            android:theme="@style/translucent" />
+
+        <activity android:name="com.yude.auctionhelp.activitys.NewPwdActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.PhoneVerificationActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.my_activity.ClipImageActivity" />
+
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.DateilsActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.UnpublishedDateilsActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.BaterDateilsActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.SucceesDateilsActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsFavoriteNewActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsBooksActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsExplainActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsMarkBriefActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsPlayListActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsMustKnowActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsNoticeActivity" />
+        //回退理由
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.BackDateilsActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.TestDateilsActivity">
+
+        </activity>
+        <activity android:name=".activitys.MyActivity" />
+        <activity android:name=".activitys.waitfor_activity.HomeNewActivity"/>
+        <activity android:name=".activitys.NotepadActivity"/>
+
+        // 等待尽调的详细
+        <activity android:name=".activitys.waitfor_activity.WaitForDetailedActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".JThemeActivity">
+
+        </activity>
+
+        // 房屋编辑 添加图片
+        <activity android:name=".activitys.waitfor_activity.HomeAddPictureActivity">
+
+        </activity>
+    </application>
+
+
+
+</manifest>
