@@ -63,8 +63,9 @@
         android:background="#c82015" />
 
     <ScrollView
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -305,4 +306,11 @@
 
         </LinearLayout>
     </ScrollView>
+    <Button
+       android:id="@+id/sing_up_btn"
+        android:textColor="#ffffff"
+        android:background="@drawable/login_button_selector"
+        android:text="我要报名"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

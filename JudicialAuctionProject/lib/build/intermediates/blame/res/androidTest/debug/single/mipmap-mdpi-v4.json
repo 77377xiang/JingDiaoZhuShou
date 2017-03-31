@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/hexiang/Downloads/STAppZhuShou/JudicialAuctionProject/lib/build/intermediates/res/merged/androidTest/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/hexiang/Downloads/STAppZhuShou/JudicialAuctionProject/lib/build/intermediates/bundles/debug/res/mipmap-mdpi-v4/ic_launcher.png"
+    },
+    {
         "merged": "/Users/hexiang/Downloads/AndroidDemo/yude/appzhushou/JudicialAuctionProject/lib/build/intermediates/res/merged/androidTest/debug/mipmap-mdpi-v4/ic_launcher.png",
         "source": "/Users/hexiang/Downloads/AndroidDemo/yude/appzhushou/JudicialAuctionProject/lib/build/intermediates/bundles/debug/res/mipmap-mdpi-v4/ic_launcher.png"
     }

@@ -1,9 +1,11 @@
 package com.yude.auctionhelp.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by hexiang on 17/3/23.
  */
-public class TestWaitfor {
+public class TestWaitfor  implements Serializable {
 
     private  String  photo;
     private  String title;

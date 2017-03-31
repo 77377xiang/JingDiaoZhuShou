@@ -5,15 +5,18 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yude.auctionhelp.R;
+import com.yude.auctionhelp.activitys.waitfor_activity.edit_home.EditTaxationActivity;
 import com.yude.auctionhelp.adapter.RecycleHolder;
 import com.yude.auctionhelp.adapter.markadapter.Pull_Mark_releaseComplteRecyclerAdapter;
 import com.yude.auctionhelp.base.BaseActivity;
+import com.yude.auctionhelp.entity.TestWaitfor;
 import com.yude.auctionhelp.utils.RecycleViewDivider;
 
 import java.util.ArrayList;
@@ -31,6 +34,7 @@ public class WaitForDetailedActivity extends BaseActivity  implements View.OnCli
     List<String> recyclerViewData = new ArrayList<>();
     TextView tile_tv, l_title_tv, r_title_tv;
     ImageView l_title_iv, r_title_iv;
+    TextView  reason_tv,attention_eara,type_tv;
 
     @Override
     public int getContentViewId() {
@@ -40,6 +44,16 @@ public class WaitForDetailedActivity extends BaseActivity  implements View.OnCli
     @Override
     protected void initViews(Bundle bundle) {
         catalog_rv = (RecyclerView) findViewById(R.id.catalog_rv);
+        reason_tv = (TextView) findViewById(R.id.reason_tv);
+        attention_eara = (TextView) findViewById(R.id.attention_eara);
+        type_tv = (TextView) findViewById(R.id.type_tv);
+
+        TestWaitfor testWaitfor = (TestWaitfor) getIntent().getSerializableExtra("key");
+
+        reason_tv.setText(testWaitfor.getTitle());
+        attention_eara.setText(testWaitfor.getType());
+        type_tv.setText(testWaitfor.getWaitForType());
+
         initTite();
         initRecyclerViewData();
         catalog_rv.setLayoutManager(new LinearLayoutManager(this));
@@ -49,9 +63,12 @@ public class WaitForDetailedActivity extends BaseActivity  implements View.OnCli
             @Override
             public void convert(RecycleHolder holder, String data, int position) {
                 holder.setText(R.id.new_tv, recyclerViewData.get(position));
+                holder.findView(R.id.number_tv).setVisibility(View.INVISIBLE);
 
             }
         };
+
+
 
         catalog_rv.setAdapter(adapter);
         adapter.setOnItemClickListener(new Pull_Mark_releaseComplteRecyclerAdapter.OnItemClickListener() {
@@ -60,18 +77,19 @@ public class WaitForDetailedActivity extends BaseActivity  implements View.OnCli
                 switch (position) {
                     case 0:
                         startActivity(new Intent(WaitForDetailedActivity.this,HomeNewActivity.class));
-                        Toast.makeText(WaitForDetailedActivity.this,"房屋信息",Toast.LENGTH_LONG).show();
+                       // Toast.makeText(WaitForDetailedActivity.this,"房屋信息",Toast.LENGTH_LONG).show();
 
                         break;
                     case 1:
-                        Toast.makeText(WaitForDetailedActivity.this,"物业信息",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(WaitForDetailedActivity.this,PropertysActivity.class));
+
+                        // Toast.makeText(WaitForDetailedActivity.this,"物业信息",Toast.LENGTH_LONG).show();
 
 
                         break;
                     case 2:
-                        Toast.makeText(WaitForDetailedActivity.this,"税费信息",Toast.LENGTH_LONG).show();
-
-
+                        startActivity(new Intent(WaitForDetailedActivity.this,EditTaxationActivity.class));
+                       // Toast.makeText(WaitForDetailedActivity.this,"税费信息",Toast.LENGTH_LONG).show();
                         break;
 
 
@@ -83,6 +101,8 @@ public class WaitForDetailedActivity extends BaseActivity  implements View.OnCli
 
         });
     }
+
+
 
     private   void  initTite(){
 

@@ -4,35 +4,27 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bigkoo.pickerview.TimePickerView;
 import com.yude.auctionhelp.activitys.MyActivity;
-import com.yude.auctionhelp.adapter.ThemePagerAdapter;
 import com.yude.auctionhelp.base.BaseActivity;
-import com.yude.auctionhelp.entity.TestWaitfor;
 import com.yude.auctionhelp.fragment.callfragment.CompleteFragment;
+import com.yude.auctionhelp.fragment.callfragment.ShangPaiFragment;
 import com.yude.auctionhelp.fragment.callfragment.TransferFragment;
 import com.yude.auctionhelp.fragment.callfragment.WaitForFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  * Created by hexiang on 17/3/23.
@@ -44,12 +36,12 @@ public class ThemeActivity extends BaseActivity implements View.OnClickListener 
 
     TextView tv_1, tv_2;
     ViewPager pager;
-    ThemePagerAdapter adapter;
+    NewThemePagerAdapter adapter;
     private PopupWindow mPopWindow;
     TextView antique_tv, factory_home_tv, car_tv, home_tv, all_tv;
     LinearLayout linearLayout; //弹框布局
     int tv_2_width;
-    private List<Fragment> fraglist = new ArrayList<>();
+    private List<Fragment> mFragments = new ArrayList<>();
     String uil = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg";
 
     @Override
@@ -65,10 +57,10 @@ public class ThemeActivity extends BaseActivity implements View.OnClickListener 
         initTitle();
         defauitTab();
         initPWWidth();
-        fraglist.add(new WaitForFragment());
-        fraglist.add(new TransferFragment());
+        mFragments.add(new WaitForFragment());
+        mFragments.add(new CompleteFragment());
 
-        adapter = new ThemePagerAdapter(getSupportFragmentManager(), fraglist, pager, this);
+        adapter = new NewThemePagerAdapter(getSupportFragmentManager(), mFragments, pager, this);
         pager.setAdapter(adapter);
 
         pager.setOffscreenPageLimit(2);
@@ -113,7 +105,7 @@ public class ThemeActivity extends BaseActivity implements View.OnClickListener 
 
 
     // 获取弹出框宽度
-    private void initPWWidth(){
+    private void initPWWidth() {
 
         //   异步执行
 
@@ -129,16 +121,9 @@ public class ThemeActivity extends BaseActivity implements View.OnClickListener 
 
     /**
      * 通知刷新适配器
+     *
      * @param
      */
-    private void notifyRefreshAdapter() {
-        if(adapter!= null){
-            adapter = null;
-        }
-        adapter = new ThemePagerAdapter(getSupportFragmentManager(), fraglist, pager, this);
-        pager.setAdapter(adapter);
-    }
-
 
 
     private void initTitle() {
@@ -206,6 +191,11 @@ public class ThemeActivity extends BaseActivity implements View.OnClickListener 
                 tv_2.setTextColor(0xffC82015);
                 tv_2.setText("尽调完成");
                 Toast.makeText(ThemeActivity.this, "尽调完成", Toast.LENGTH_SHORT).show();
+
+                mFragments.remove(1);
+                mFragments.add(1, new CompleteFragment());
+                adapter.notifyDataSetChanged();
+                // adapter.setFragments(mFragments);
                 break;
             case R.id.home_tv:
                 pager.setCurrentItem(1);
@@ -238,18 +228,19 @@ public class ThemeActivity extends BaseActivity implements View.OnClickListener 
                 tv_2.setTextColor(0xffC82015);
                 tv_2.setText("交接");
                 Toast.makeText(ThemeActivity.this, "交接", Toast.LENGTH_SHORT).show();
+
+
+                //  mFragments.add(new WaitForFragment());
+                // mFragments.add(new CompleteFragment());
+
                 if (pager.getAdapter() != null) {
-                    fraglist.remove(1);
-                    fraglist.add(new TransferFragment());
-                    notifyRefreshAdapter();
+                    mFragments.remove(1);
+                    mFragments.add(1, new TransferFragment());
+                    adapter.notifyDataSetChanged();
 
-
-                    //adapter.notifyDataSetChanged();
-                    //ThemePagerAdapter   adapter = new ThemePagerAdapter(getSupportFragmentManager(), fraglist);
-                    //pager.setAdapter(adapter);
-                    // pager.setCurrentItem(1);
-
+                    // adapter.setFragments(mFragments);
                 }
+
                 break;
 
 

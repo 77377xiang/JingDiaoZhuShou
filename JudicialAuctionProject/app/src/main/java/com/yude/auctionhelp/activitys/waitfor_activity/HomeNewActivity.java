@@ -14,7 +14,9 @@ import com.yude.auctionhelp.R;
 import com.yude.auctionhelp.activitys.NotepadActivity;
 import com.yude.auctionhelp.adapter.EditTypePagerAdapter;
 import com.yude.auctionhelp.base.BaseActivity;
+import com.yude.auctionhelp.fragment.callfragment.home_data.EditAlivingRoomFragment;
 import com.yude.auctionhelp.fragment.callfragment.home_data.EditEnvironmentalFragment;
+import com.yude.auctionhelp.fragment.callfragment.home_data.EditHomeOutFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * 房屋编辑
+ * 房屋 编辑完成的展示
  */
 public class HomeNewActivity extends BaseActivity implements View.OnClickListener {
 
@@ -98,9 +100,9 @@ public class HomeNewActivity extends BaseActivity implements View.OnClickListene
 
     //向viewpager 添加 数据源
     private void addFragment() {
-        typeFragments.add(new EditEnvironmentalFragment());
-        typeFragments.add(new EditEnvironmentalFragment());
-        typeFragments.add(new EditEnvironmentalFragment());
+        typeFragments.add(new EditEnvironmentalFragment()); // 环境
+        typeFragments.add(new EditHomeOutFragment()); //  房屋外景
+        typeFragments.add(new EditAlivingRoomFragment()); // 客厅
         typeFragments.add(new EditEnvironmentalFragment());
         typeFragments.add(new EditEnvironmentalFragment());
         typeFragments.add(new EditEnvironmentalFragment());
@@ -146,8 +148,8 @@ public class HomeNewActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.r_title_iv:
                 startActivity(new Intent(HomeNewActivity.this, NotepadActivity.class));
-
                 break;
+
         }
 
     }
@@ -179,26 +181,11 @@ public class HomeNewActivity extends BaseActivity implements View.OnClickListene
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-
-
-
-
-
-
                // Log.e("positionOffsetPixels","我是滑动像素"+positionOffsetPixels);
-
-
-
-
-
-
-
             }
 
             @Override
             public void onPageSelected(int position) {
-
 
                 if(position>3){
                     // 获取最顶端的布局空间焦点
@@ -207,11 +194,9 @@ public class HomeNewActivity extends BaseActivity implements View.OnClickListene
                     ll_8.requestFocus();
 
                 }else {
-
                     ll_1.setFocusable(true);
                     ll_1.setFocusableInTouchMode(true);
                     ll_1.requestFocus();
-
                 }
 
                 switch (position) {
@@ -224,6 +209,8 @@ public class HomeNewActivity extends BaseActivity implements View.OnClickListene
                         tv6.setTextColor(0xffb0b0b0);
                         tv7.setTextColor(0xffb0b0b0);
                         tv8.setTextColor(0xffb0b0b0);
+
+
 
                         break;
 
@@ -317,12 +304,9 @@ public class HomeNewActivity extends BaseActivity implements View.OnClickListene
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
-
     }
-
 
 
     private void initTab() {

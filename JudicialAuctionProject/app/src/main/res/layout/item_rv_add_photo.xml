@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:scaleType="fitXY"
             android:id="@+id/addPhoto_iv"
             android:layout_width="100dp"
             android:layout_height="100dp"

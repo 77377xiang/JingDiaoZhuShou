@@ -86,11 +86,10 @@ public class ImageUtil {
         ImageLoader.getInstance().displayImage(uri, imageView);
     }
 
-    public static void setImgwithOptions(String uri, ImageView imageView) {
+       public static void setImgwithOptions(String uri, ImageView imageView) {
 
         ImageLoader.getInstance().displayImage(uri, imageView, initOptions());
 
-        //参数一层层向外看一只找到初始化位置
     }
 
 

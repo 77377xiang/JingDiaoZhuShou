@@ -6,7 +6,7 @@ import android.view.ViewTreeObserver;
 import com.yude.auctionhelp.R;
 import com.yude.auctionhelp.base.BaseActivity;
 import com.yude.auctionhelp.utils.ImageUtil;
-import com.yude.auctionhelp.views.DragImageView;
+import com.yude.auctionhelp.views.view.DragImageView;
 import com.yude.auctionhelp.views.view.TouchImageView;
 
 /**

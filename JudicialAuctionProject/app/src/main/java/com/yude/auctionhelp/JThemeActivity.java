@@ -16,12 +16,15 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import com.yude.auctionhelp.activitys.MyActivity;
 import com.yude.auctionhelp.adapter.ThemePagerAdapter;
 import com.yude.auctionhelp.base.BaseActivity;
+import com.yude.auctionhelp.entity.TestWaitfor;
 import com.yude.auctionhelp.fragment.callfragment.CompleteFragment;
 import com.yude.auctionhelp.fragment.callfragment.TransferFragment;
 import com.yude.auctionhelp.fragment.callfragment.WaitForFragment;
+import com.yude.auctionhelp.fragment.callfragment.addpter_data.CompleteAdapterAndData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +47,10 @@ public class JThemeActivity extends BaseActivity implements View.OnClickListener
     private List<Fragment> fraglist = new ArrayList<>();
     String uil = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg";
     CompleteFragment comFragment;
+    private List<TestWaitfor> testWaitfors;
+    private PullLoadMoreRecyclerView mPullLoadMoreRecyclerView;
 
+  //  CompleteAdapterAndData mCompleteAdapterAndData = new CompleteAdapterAndData(this,testWaitfors,mPullLoadMoreRecyclerView);
     @Override
     public int getContentViewId() {
         return R.layout.activity_theme;
@@ -171,6 +177,8 @@ public class JThemeActivity extends BaseActivity implements View.OnClickListener
                 tv_2.setTextColor(0xffC82015);
                 tv_2.setText("尽调完成");
                 Toast.makeText(JThemeActivity.this, "尽调完成", Toast.LENGTH_SHORT).show();
+                comFragment.setRecyclerAdapter(comFragment.initAdapter(this, comFragment.initData(), R.layout.item_pull_waitfor));
+
                 break;
             case R.id.home_tv:
                 pager.setCurrentItem(1);
@@ -179,6 +187,7 @@ public class JThemeActivity extends BaseActivity implements View.OnClickListener
                 tv_2.setTextColor(0xffC82015);
                 tv_2.setText("待审核");
                 Toast.makeText(JThemeActivity.this, "待审核", Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.car_tv:
                 pager.setCurrentItem(1);
@@ -201,7 +210,7 @@ public class JThemeActivity extends BaseActivity implements View.OnClickListener
                 tv_1.setTextColor(0xff000000);
                 tv_2.setTextColor(0xffC82015);
                 tv_2.setText("交接");
-                comFragment.refreshJiaoJie();
+                comFragment.refreshJiaoJie(comFragment.initAdapter(this, comFragment.initJJData(), R.layout.item_pull_waitfor));
                 break;
 
 

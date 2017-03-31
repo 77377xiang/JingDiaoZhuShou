@@ -86,6 +86,10 @@ public class MyActivity extends BaseActivity {
     @BindView(R.id.number_tv)
     TextView number_tv;
 
+    @BindView(R.id.sing_up_btn)
+    Button sing_up_btn;
+
+
     BadgeView isShowUnpublished_bv;
 
     @Override
@@ -167,7 +171,7 @@ public class MyActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.concern_bt, R.id.setting_bt, R.id.photo_iv})
+    @OnClick({R.id.concern_bt, R.id.setting_bt, R.id.photo_iv,R.id.sing_up_btn})
     void click(View v) {
         switch (v.getId()) {
 
@@ -186,6 +190,10 @@ public class MyActivity extends BaseActivity {
             case R.id.setting_bt:
                 Toast.makeText(this, "点击了通知", Toast.LENGTH_SHORT).show();
                 // startActivity(new Intent(getActivity(), DetailsFavoriteNewActivity.class));
+
+                break;
+            case R.id.sing_up_btn:
+                Toast.makeText(this, "点击我要报名", Toast.LENGTH_SHORT).show();
 
                 break;
 

@@ -56,19 +56,10 @@ public class ThemePagerAdapter extends FragmentPagerAdapter {
     }
 
 
-//    @Override
-//    public int getItemPosition(Object object) {
-////        if (mChildCount > 0) {
-////            // 这里利用判断执行若干次不缓存，刷新
-////            mChildCount--;
-////            // 返回这个是强制ViewPager不缓存，每次滑动都刷新视图
-////            return POSITION_NONE;
-////        }
-////        // 这个则是缓存不刷新视图
-////        return super.getItemPosition(0);
-//        return POSITION_NONE;
-//    }
 
-
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
+    }
 
 }

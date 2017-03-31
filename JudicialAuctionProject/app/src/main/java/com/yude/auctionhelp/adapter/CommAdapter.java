@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.FallBckeDateilsActivity;
+
 import java.util.List;
 
 /**
@@ -20,6 +22,9 @@ public abstract class CommAdapter<T> extends BaseAdapter {
         this.layoutId = layoutId;
         this.context = context;
     }
+
+
+
     @Override
     public int getCount() {
         return t.size();

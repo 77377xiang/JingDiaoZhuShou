@@ -49,6 +49,14 @@ dependencies {
     compile 'com.contrarywind:Android-PickerView:3.1.0'
     // 图片选择器
     compile project(':multi-image-selector')
+    //带气泡 可滑动的进度条
+    compile 'org.adw.library:discrete-seekbar:1.0.1'
+
+   // compile 'com.github.woxingxiao:BubbleSeekBar:v1.2'
+    compile 'com.xw.repo:bubbleseekbar:3.2-lite'
+
+   // compile "com.xw.repo:bubbleseekbar:${LATEST_VERSION}-lite"
+    //http://www.see-source.com/androidwidget/detail.html?wid=1095
 }
 
 

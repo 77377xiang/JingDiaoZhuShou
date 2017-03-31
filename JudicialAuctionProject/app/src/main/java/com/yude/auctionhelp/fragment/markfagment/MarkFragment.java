@@ -23,8 +23,6 @@ import butterknife.OnClick;
 /*
 * 标的
 *
-*     tab  待审核有问题
-*     点击更多应该隐藏 第一排tab ,显示第二排
 *
 *
 * */

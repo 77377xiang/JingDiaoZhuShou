@@ -1,11 +1,14 @@
 package com.yude.auctionhelp.fragment.callfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import com.yude.auctionhelp.R;
+import com.yude.auctionhelp.activitys.waitfor_activity.WaitForDetailedActivity;
 import com.yude.auctionhelp.adapter.RecycleHolder;
 import com.yude.auctionhelp.adapter.markadapter.Pull_Mark_releaseComplteRecyclerAdapter;
 import com.yude.auctionhelp.base.BaseFragment;
@@ -23,7 +26,7 @@ public class WaitForFragment extends BaseFragment {
     private List<TestWaitfor> testWaitfors;
     Pull_Mark_releaseComplteRecyclerAdapter<TestWaitfor> adapter;
     String uil = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg";
-
+    TestWaitfor testWaitfor = new TestWaitfor();
 
     @Override
     public int getContentViewId() {
@@ -54,6 +57,29 @@ public class WaitForFragment extends BaseFragment {
             }
         };
         waitfor_pmrv.setAdapter(adapter);
+
+
+
+        adapter.setOnItemClickListener(new Pull_Mark_releaseComplteRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClickListener(View view, int position) {
+
+                Intent  intent = new Intent(getContext(), WaitForDetailedActivity.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putSerializable("key",testWaitfor);
+                intent.putExtras(mBundle);
+                startActivity(intent);
+
+                Log.e("testWaitfor",""+testWaitfor.getTitle());
+                Log.e("testWaitfor",""+testWaitfor.getTitle());
+                Log.e("testWaitfor",""+testWaitfor.getType());
+                Log.e("testWaitfor",""+testWaitfor.getWaitForType());
+                Log.e("testWaitfor",""+testWaitfor.getStartEdit());
+
+            }
+        });
+
+
 
 
         waitfor_pmrv.setOnPullLoadMoreListener(new PullLoadMoreRecyclerView.PullLoadMoreListener() {
@@ -89,8 +115,7 @@ public class WaitForFragment extends BaseFragment {
     private void initData() {
         testWaitfors = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-
-            TestWaitfor testWaitfor = new TestWaitfor();
+           testWaitfor = new TestWaitfor();
             testWaitfor.setTitle("杭州西溪北湾一区一单元");
             testWaitfor.setAddress("杭州市余杭区");
             testWaitfor.setPhoto(uil);

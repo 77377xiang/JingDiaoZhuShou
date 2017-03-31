@@ -5,30 +5,17 @@
     android:orientation="vertical">
 
     <include layout="@layout/title" />
-
-
-    <ImageView
-
+    <TextView
+        android:background="#c82015"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="13dp"
-        android:background="#b0b0b0"
-        android:src="@drawable/a1" />
+        android:layout_height="1dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/show_rv"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        />
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/login_button_selector"
-        android:text="添加一组备忘录"
-        android:textColor="#ffffff" />
 
 </LinearLayout>

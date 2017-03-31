@@ -12,9 +12,9 @@
         android:background="#c82015" />
 
     <ScrollView
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
 
         >
 
@@ -162,11 +162,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:textColor="#333333"
                     android:id="@+id/position_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="西溪北苑北区栋2单元"
+                    android:textColor="#333333"
                     android:textSize="17sp" />
 
                 <LinearLayout
@@ -258,28 +258,29 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="13sp"
-                        android:textColor="#333333"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@mipmap/r_baoming_2"
                         android:drawablePadding="5dp"
-                        android:text="报名:" />
-                    <TextView
-                        android:layout_marginLeft="2dp"
-                        android:id="@+id/in_number_tv"
-                        android:textColor="#c82015"
-                        android:textSize="13sp"
-                        android:text="10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:text="报名:"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
 
                     <TextView
-                        android:textColor="#333333"
-                        android:textSize="13sp"
-                        android:text="人"
+                        android:id="@+id/in_number_tv"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:text="10"
+                        android:textColor="#c82015"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="人"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
 
 
                 </LinearLayout>
@@ -292,28 +293,29 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_marginLeft="2dp"
-                        android:textColor="#333333"
-                        android:textSize="13sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:drawableLeft="@mipmap/r_weiguan_2"
                         android:drawablePadding="5dp"
-                        android:text="围观:" />
-                    <TextView
-                        android:id="@+id/see_number_tv"
-                        android:textColor="#c82015"
-                        android:textSize="13sp"
-                        android:text="18000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:text="围观:"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
 
                     <TextView
-                        android:textColor="#333333"
-                        android:textSize="13sp"
-                        android:text="人"
+                        android:id="@+id/see_number_tv"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="18000"
+                        android:textColor="#c82015"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="人"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
 
                 </LinearLayout>
 
@@ -324,28 +326,29 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_marginLeft="2dp"
-                        android:textColor="#333333"
-                        android:textSize="13sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:drawableLeft="@mipmap/r_guanzhu_2"
                         android:drawablePadding="5dp"
-                        android:text="关注:" />
-                    <TextView
-                        android:id="@+id/importance_number_tv"
-                        android:textColor="#c82015"
-                        android:textSize="13sp"
-                        android:text="1200"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:text="关注:"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
 
                     <TextView
-                        android:textColor="#333333"
-                        android:textSize="13sp"
-                        android:text="人"
+                        android:id="@+id/importance_number_tv"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="1200"
+                        android:textColor="#c82015"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="人"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
 
 
                 </LinearLayout>
@@ -521,6 +524,9 @@
 
             </LinearLayout>
 
+            <include layout="@layout/inclound_fellback" />
+
+
             <LinearLayout
                 android:id="@+id/button_ll_z"
                 android:layout_width="match_parent"
@@ -565,6 +571,7 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -756,8 +763,7 @@
             android:paddingRight="40dp"
             android:text="发布"
             android:textColor="#fff"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/Division_TV"
@@ -775,8 +781,7 @@
             android:paddingRight="40dp"
             android:text="回退"
             android:textColor="#fff"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

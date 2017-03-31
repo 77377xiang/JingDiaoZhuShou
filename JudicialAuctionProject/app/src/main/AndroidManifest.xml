@@ -26,7 +26,9 @@
         <activity android:name="com.yude.auctionhelp.activitys.WelcomeActivity">
 
         </activity>
+        // 主界面
         <activity android:name=".ThemeActivity">
+
 
         </activity>
         <activity android:name="com.yude.auctionhelp.MainActivity" />
@@ -57,32 +59,64 @@
         <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsPlayListActivity" />
         <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsMustKnowActivity" />
         <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.DetailsNoticeActivity" />
-        //回退理由
-        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.BackDateilsActivity" />
-        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.TestDateilsActivity">
-
-        </activity>
-        <activity android:name=".activitys.MyActivity" />
-        <activity android:name=".activitys.waitfor_activity.HomeNewActivity"/>
-        <activity android:name=".activitys.NotepadActivity"/>
-
-        // 等待尽调的详细
-        <activity android:name=".activitys.waitfor_activity.WaitForDetailedActivity">
+        //回退详情
+        <activity android:name=".activitys.mark_activity.mark_details.activitys.FallBckeDateilsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
         </activity>
+        //回退理由
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.activitys.BackDateilsActivity" />
+        <activity android:name="com.yude.auctionhelp.activitys.mark_activity.mark_details.TestDateilsActivity">
+
+        </activity>
+        <activity android:name=".activitys.MyActivity" />
+        // 记事本
+        <activity android:name=".activitys.NotepadActivity"/>
+
+        // 等待尽调的详细
+        <activity android:name=".activitys.waitfor_activity.WaitForDetailedActivity">
+
+        </activity>
 
         <activity android:name=".JThemeActivity">
 
         </activity>
+        //  物业信息
+        <activity android:name=".activitys.waitfor_activity.PropertysActivity"></activity>
 
         // 房屋编辑 添加图片
-        <activity android:name=".activitys.waitfor_activity.HomeAddPictureActivity">
+        <activity android:name=".activitys.waitfor_activity.edit_home.HomeAddPictureActivity">
+        </activity>
+        <activity android:name=".activitys.waitfor_activity.edit_home.HomeEnvironmentalActivity">
 
         </activity>
+        // 房屋编辑   外景  添加图片
+        <activity android:name=".activitys.waitfor_activity.edit_home.HomeAddPicture2Activity">
+        </activity>
+        // 房屋编辑  客厅
+        <activity android:name=".activitys.waitfor_activity.edit_home.HomeLivingRoomActivity">
+
+        </activity>
+
+        <activity android:name=".TestHActivity">
+
+
+
+        </activity>
+        //  房屋信息
+        <activity android:name=".activitys.waitfor_activity.HomeNewActivity"></activity>
+        // 税费信息
+        <activity android:name=".activitys.waitfor_activity.edit_home.EditTaxationActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            >
+
+        </activity>
+
+
+
     </application>
 
 

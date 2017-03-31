@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.yude.auctionhelp.utils.ImageUtil;
+
 
 public class ViewHolder {
     public SparseArray<View> views;
@@ -57,16 +59,24 @@ public class ViewHolder {
 
     public ViewHolder setImg(int resId, String url) {
         ImageView img = getView(resId);
-
-
-      //  ImageUtil.setImg(url, img);
+        ImageUtil.setImg(url, img);
         return this;
     }
+
+
+    public ViewHolder setImgBen(int resId, String url) {
+        ImageView img = getView(resId);
+        ImageUtil.setImgwithOptions(url, img);
+       // ImageUtil.setImg(url, img);
+        return this;
+    }
+
+
 
     public ViewHolder setImg(int resId, int drawable) {
         ImageView img = getView(resId);
         img.setImageResource(drawable);
-        //  ImageUtil.setImg(url, img);
+         // ImageUtil.setImg(url, img);
         return this;
     }
 

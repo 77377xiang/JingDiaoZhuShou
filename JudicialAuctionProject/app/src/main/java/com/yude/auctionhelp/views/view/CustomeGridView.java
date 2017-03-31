@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.widget.GridView;
 
 /**
- * Created by hexiang on 17/3/27.
+ * 不可滑动的 GridView
  */
 public class CustomeGridView extends GridView {
 
@@ -25,4 +25,17 @@ public class CustomeGridView extends GridView {
 
         return super.dispatchTouchEvent(ev);
     }
+
+
+
+     // 处理 子view  不完全显示
+    @Override
+    public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,
+                MeasureSpec.AT_MOST);
+        super.onMeasure(widthMeasureSpec, expandSpec);
+    }
+
+
 }
